@@ -5,8 +5,11 @@ import { PrimeNGConfig } from 'primeng/api';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  constructor() {}
+export class AppComponent implements OnInit {
+  constructor(private primengConfig: PrimeNGConfig) {}
+  ngOnInit(): void {
+    this.primengConfig.ripple = true;
+  }
   name: string = 'Cristhian fonseca';
   seeName() {
     console.log(this.name);
